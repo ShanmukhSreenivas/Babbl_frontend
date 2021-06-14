@@ -8,14 +8,14 @@ export const MENU = () => {
   const { user } = useContext(UserContext)
 
   return [
-    {
-      key: 'twitter',
+    /*{
+      key: 'babbl',
       path: '/',
       icon: <Icon.Twitter style={{ fontSize: 30 }} />,
       iconSelected: <Icon.Twitter style={{ fontSize: 30 }} />,
       title: '',
       notify: 0
-    },
+    },*/
     {
       key: 'home',
       path: '/',

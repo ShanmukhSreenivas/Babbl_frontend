@@ -14,7 +14,7 @@
 
 .form-control input {
     width: 100%;
-    border-bottom: 3px solid var(--c-gray);
+    border-bottom: 1px solid var(--c-theme);
     height: 50px;
     padding:0 5px;
     margin: 5px 0;

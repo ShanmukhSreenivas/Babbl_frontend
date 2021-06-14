@@ -3,7 +3,7 @@
     grid-template-columns: auto 1fr;
     padding: 5px 15px;
 
-    border-bottom: 10px solid var(--c-border-color);
+    border-bottom: 2px solid var(--c-border-color);
 }
 .tweet-editor--avatar{
     margin-top: 5px;
@@ -35,10 +35,9 @@
 
 }
 .tweet-editor__body--icons {
-    margin-left: -5px;
+    margin-right: -5px;
     display: flex;
     align-items: center;
-
 }
 #file-input{
     display: none;

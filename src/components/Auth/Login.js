@@ -66,7 +66,7 @@ function Login({ setAuth }) {
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
-                <div className="form-control" style={{ marginBottom: "15px" }}>
+                <div className="form-control" style={{ marginBottom: "50px" }}>
                     <input
                         type="password"
                         placeholder="Password"

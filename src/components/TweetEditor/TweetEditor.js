@@ -102,6 +102,7 @@ function TweetEditor() {
                     value={textTweet}
                 />
                 <div className="tweet-editor__body--secondary">
+
                     <div className="tweet-editor__body--icons">
 
                         <label htmlFor="file-input" style={{ cursor: "pointer" }}>

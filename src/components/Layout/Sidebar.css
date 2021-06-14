@@ -20,6 +20,12 @@
   margin-top: auto;
   margin-bottom: 14px;
 }
+.layout-explore--search{
+  margin-top: 30px;
+  margin-bottom: 25px;
+  position: sticky;
+  z-index: 999;
+}
 
   @media (min-width: 1270px) {
     .sidebar {

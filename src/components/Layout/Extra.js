@@ -7,8 +7,9 @@ import List from '../List'
 import FollowSuggestion from '../FollowSuggestion'
 import News from '../News'
 import Loading from '../loading'
-
-import { Options } from '../icons'
+import Button from '../Button/Button.js'
+import { Link } from 'react-router-dom';
+import {Twitter, Options } from '../icons'
 import SearchBox from '../SearchBox/SearchBox'
 
 import { UserContext } from '../../context/UserContext'
@@ -36,10 +37,11 @@ function Extra() {
     return (
         <section className="layout-explore">
 
-            <SearchBox onChange={(e) => setSearchText(e.target.value)}
+        <Link to="/"><Button icon><Twitter /></Button></Link>
+           {/*<SearchBox onChange={(e) => setSearchText(e.target.value)}
                 value={searchText}
                 onKeyPress={handleAddSearch}
-                className="layout-explore--search" />
+    className="layout-explore--search" />*/}
 
             <div className="layout-explore--stick">
 

@@ -25,11 +25,11 @@ function Sidebar({ flat }) {
         <div className="sidebar">
             <Navigation flat={flat} />
 
-            <div className="sidebar__tweet">
+            {/*<div className="sidebar__tweet">
                 <ThemeButton href='/' primary size="large" full={!flat} >
                     {flat ? <Tweet /> : 'Babble'}
                 </ThemeButton>
-            </div>
+    </div>*/}
 
 
             <div className="sidebar__profile">

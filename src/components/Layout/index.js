@@ -15,10 +15,10 @@ function Layout({ children }) {
 
     return (
         <div className="layout">
+            {size.width > CONST.TABLET_SIZE && <Extra />}
+            <TimeLine>{children}</TimeLine>
             {size.width <= 500 && <MobileSidebar />}
             {size.width > 500 && <Sidebar flat={size.width < CONST.DESKTOP_SIZE} />}
-            <TimeLine>{children}</TimeLine>
-            {size.width > CONST.TABLET_SIZE && <Extra />}
         </div>
     )
 }

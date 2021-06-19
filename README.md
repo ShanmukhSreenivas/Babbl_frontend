@@ -1,9 +1,8 @@
 # Babbl Frontend
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/45cd0cca-458a-4498-9578-f66fb34d073b/deploy-status)](https://app.netlify.com/sites/babbl-frontend/deploys)
 [![License](https://img.shields.io/badge/License-BSL-blue.svg)](https://opensource.org/licenses/BSL-1.0)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-[![GitHub followers](https://img.shields.io/github/followers/saivittalb.svg?style=social&label=Follow)](https://github.com/saivittalb?tab=followers)
-[![Twitter Follow](https://img.shields.io/twitter/follow/saivittalb.svg?style=social)](https://twitter.com/saivittalb)
 
 <p align="center"><img src="https://user-images.githubusercontent.com/36305142/122650928-2f3dc480-d153-11eb-91dd-fa9b36da173a.png"></p>
 
@@ -34,8 +33,6 @@ Following versions were used in the development of this project:
 ## License
 
 This project is licensed under the Boost Software License 1.0, a simple permissive license only requiring preservation of copyright and license notices for source (and not binary) distribution. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
-
-<p align="center"> Copyright (c) 2021 Sai Vittal B. All rights reserved.</p>
 
 ## Instructions to setup locally
 
@@ -99,8 +96,4 @@ $ git push origin
 
 * Create a Pull Request by clicking the ```New pull request``` button on your repository page.
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/saivittalb/)
 [![ForTheBadge powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](http://ForTheBadge.com)
-
-<p align="center"> Copyright (c) 2021 Sai Vittal B. All rights reserved.</p>
-<p align="center"> Made with ❤ by <a href="https://github.com/saivittalb">Sai Vittal B</a></p>

@@ -32,11 +32,11 @@ const Template = (args) => (
     <Icons.ProfileFill />
     <Icons.Question />
     <Icons.Reply />
-    <Icons.Retweet />
+    <Icons.Rebabble />
     <Icons.Search />
     <Icons.Share />
     <Icons.TimelineProp />
-    <Icons.Twitter />
+    <Icons.Babbl />
   </div>
 );
 

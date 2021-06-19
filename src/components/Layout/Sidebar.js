@@ -1,27 +1,20 @@
 import React, { useContext, useState } from 'react'
-import { useHistory, useLocation as locations } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import './Sidebar.css'
 
 import Navigation from '../Navigation/Navigation'
-import ThemeButton from '../ThemeButton/ThemeButton'
 import ProfileBox from '../ProfileBox/ProfileBox'
 import Menu from '../Menu/Menu'
 import SearchBox from '../SearchBox/SearchBox'
-import { Tweet } from '../icons'
 import FollowSuggestion from '../FollowSuggestion'
 
 import { UserContext } from "../../context/UserContext";
-import { FeedContext } from '../../context/FeedContext'
-
 
 function Sidebar({ flat }) {
 
     const { setUser, user } = useContext(UserContext);
     const history = useHistory()
-    let router = locations();
-
-    const { whoFollow, tags } = useContext(FeedContext);
 
     const [searchText, setSearchText] = useState("");
 
@@ -40,7 +33,6 @@ function Sidebar({ flat }) {
         }
     }
 
-
     return (
         <div className="sidebar">
             <SearchBox onChange={(e) => setSearchText(e.target.value)}
@@ -49,13 +41,6 @@ function Sidebar({ flat }) {
     className="layout-explore--search" />
 
             <Navigation flat={flat} />
-
-            {/*<div className="sidebar__tweet">
-                <ThemeButton href='/' primary size="large" full={!flat} >
-                    {flat ? <Tweet /> : 'Babble'}
-                </ThemeButton>
-    </div>*/}
-
 
             <div className="sidebar__profile">
                 <Menu

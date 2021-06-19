@@ -3,8 +3,6 @@ import { toast } from "react-toastify";
 
 import ThemeButton from '../ThemeButton/ThemeButton'
 import TextBody from '../Text/body'
-import TextTitle from '../Text/title'
-import { Twitter } from '../icons'
 import Button from '../Button/Button'
 
 import { UserContext } from "../../context/UserContext";
@@ -60,7 +58,7 @@ function Register({ setAuth }) {
         <>
             <form onSubmit={handleLogin} >
                 <div className="auth-page__logo">
-                    <Button icon><img src={require('../icons/babbl.png')} width="170em" height="170em" viewBox="0 0 200 200" fill="none" /></Button>
+                    <Button icon><img alt="babbl-logo" src={require('../icons/babbl.png')} width="170em" height="170em" viewBox="0 0 200 200" fill="none" /></Button>
                 </div>
 
                 <div className="form-control">

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useHistory, useLocation as locations } from "react-router-dom";
+import React, { useContext } from 'react'
+import { useLocation as locations } from "react-router-dom";
 
 import './Extra.css'
 
@@ -9,35 +9,19 @@ import News from '../News'
 import Loading from '../loading'
 import Button from '../Button/Button.js'
 import { Link } from 'react-router-dom';
-import {Twitter, Options } from '../icons'
-import SearchBox from '../SearchBox/SearchBox'
+import {Babbl } from '../icons'
 
-import { UserContext } from '../../context/UserContext'
 import { FeedContext } from '../../context/FeedContext'
 
 function Extra() {
-    const history = useHistory()
     let router = locations();
 
     const { whoFollow, tags } = useContext(FeedContext);
 
-    const [searchText, setSearchText] = useState("");
-
-
-    const handleAddSearch = (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-
-            history.push(`/${searchText}`)
-
-            setSearchText('')
-        }
-    }
-
     return (
         <section className="layout-explore">
 
-        <Link to="/"><Button icon><Twitter /></Button></Link>
+        <Link to="/"><Button icon><Babbl /></Button></Link>
            {/*<SearchBox onChange={(e) => setSearchText(e.target.value)}
                 value={searchText}
                 onKeyPress={handleAddSearch}

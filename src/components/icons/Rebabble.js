@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-function SvgRetweet(props) {
+function SvgRebabble(props) {
   return (
     <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" {...props}>
       <path
@@ -11,4 +11,4 @@ function SvgRetweet(props) {
   )
 }
 
-export default SvgRetweet
+export default SvgRebabble

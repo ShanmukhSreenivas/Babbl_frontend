@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import CONST from '../../constants'
 import useWindowSize from '../../hooks/useWindowSize'

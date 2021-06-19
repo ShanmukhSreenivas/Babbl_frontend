@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
-import { useHistory, Link, NavLink } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 import { client, timeSince } from '../../utils'
 
 import Button from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
 import TextBody from '../Text/body'
-import { Reply, Retweet, Like, Share, LikeFill } from '../icons'
+import { Reply, Rebabble, Like, Share, LikeFill } from '../icons'
 
-import './Tweet.css'
+import './Babble.css'
 
-function Tweet({ post }) {
-    const { _id, isLiked, isRetweeted, comments, retweetCount, likesCount, user, createdAt, caption, tags, files } = post
+function Babble({ post }) {
+    const { _id, isLiked, isRebabbled, comments, rebabbleCount, likesCount, user, createdAt, caption, tags, files } = post
     const history = useHistory()
     const [likedState, setLiked] = useState(isLiked);
     const [likesState, setLikes] = useState(likesCount);
 
-    const [retweeted, setRetweeted] = useState(isRetweeted);
-    const [retweets, setRetweets] = useState(retweetCount);
+    const [rebabbled, setRebabbled] = useState(isRebabbled);
+    const [rebabbles, setRebabbles] = useState(rebabbleCount);
 
     const handle = user?.username;
 
@@ -33,29 +33,29 @@ function Tweet({ post }) {
         }
     };
 
-    const handleToggleRetweet = () => {
-        if (retweeted) {
-            setRetweeted(false);
-            setRetweets(retweets - 1)
-            client(`/posts/${_id}/toggleRetweet`);
+    const handleToggleRebabble = () => {
+        if (rebabbled) {
+            setRebabbled(false);
+            setRebabbles(rebabbles - 1)
+            client(`/posts/${_id}/toggleRebabble`);
         } else {
-            setRetweeted(true);
-            setRetweets(retweets + 1)
-            client(`/posts/${_id}/toggleRetweet`);
+            setRebabbled(true);
+            setRebabbles(rebabbles + 1)
+            client(`/posts/${_id}/toggleRebabble`);
         }
     }
 
     return (
-        <div className="page-tweet">
-            {isRetweeted && <span className="page-tweet__retweet"> <Retweet /> {user.username} Retweeted</span>}
+        <div className="page-babble">
+            {isRebabbled && <span className="page-babble__rebabble"> <Rebabble /> {user.username} Rebabbled</span>}
 
-            <div className="page-tweet__container">
+            <div className="page-babble__container">
 
-                <div className="page-tweet__avatar">
+                <div className="page-babble__avatar">
                     <Avatar className="" size='medium' onClick={() => history.push(`/${user.username}`)} />
                 </div>
-                <div className="page-tweet__body">
-                    <div className="tweet-info-user">
+                <div className="page-babble__body">
+                    <div className="babble-info-user">
                         <TextBody bold onClick={() => history.push(`/${user?.username}`)}>{user?.username}</TextBody>
                         <span className="secondary">{timeSince(createdAt)} ago</span>
                     </div>
@@ -69,19 +69,19 @@ function Tweet({ post }) {
                     <div className="tags">
                         {tags
                             ? tags.map((tag) => (
-                                <Link key={tag} to={`/explore?tag=${tag}`} className="tweet--tag">
+                                <Link key={tag} to={`/explore?tag=${tag}`} className="babble--tag">
                                     {`#${tag}`}
                                 </Link>
                             ))
                             : null}
                     </div>
 
-                    <Link to={`/${handle}/status/${_id}`} className="tweet__image">
+                    <Link to={`/${handle}/status/${_id}`} className="babble__image">
                         <img src={files?.length && files[0]} alt="" />
                     </Link>
 
 
-                    <div className="page-tweet__body--stats">
+                    <div className="page-babble__body--stats">
                         <div>
                             <Button icon href={`/${handle}/status/${_id}`}>
                                 <Reply />
@@ -89,11 +89,11 @@ function Tweet({ post }) {
                             <span>{comments.length > 0 && comments.length}</span>
                         </div>
 
-                        <div className={retweeted ? "isRetweet" : ""}>
-                            <Button icon onClick={handleToggleRetweet} >
-                                <Retweet />
+                        <div className={rebabbled ? "isRebabble" : ""}>
+                            <Button icon onClick={handleToggleRebabble} >
+                                <Rebabble />
                             </Button >
-                            <span>{retweets}</span>
+                            <span>{rebabbles}</span>
                         </div>
 
                         <div className={likedState ? "isLiked" : ""} >
@@ -112,4 +112,4 @@ function Tweet({ post }) {
     )
 }
 
-export default Tweet
+export default Babble

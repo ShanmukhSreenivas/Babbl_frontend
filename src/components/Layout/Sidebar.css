@@ -11,7 +11,7 @@
     overflow-x: hidden;
   }
 
-.sidebar__tweet {
+.sidebar__babble {
   margin-top: 16px;
   margin-bottom: 20px;
 }
@@ -34,7 +34,7 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    .sidebar__tweet {
+    .sidebar__babble {
       width: 80%;
     }
   

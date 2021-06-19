@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
 import { client } from '../../utils';
 
-import Tweet from '../../components/Tweet/Tweet';
+import Babble from '../../components/Babble/Babble';
 import Header from '../../components/Header/Header';
 import TextTitle from '../../components/Text/title';
 import Loading from '../../components/loading'
@@ -12,10 +12,10 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import Comment from '../../components/Comment/Comment';
 
 
-function TweetDetail({ }) {
+function BabbleDetail() {
     const params = useParams()
 
-    const [tweet, setTweet] = useState(null);
+    const [babble, setBabble] = useState(null);
     const [comments, setComments] = useState(null);
     const [commentText, setCommentText] = useState("");
 
@@ -26,7 +26,7 @@ function TweetDetail({ }) {
 
             if (!commentText) return toast.error('Write a comment first..:)')
 
-            client(`/posts/${tweet._id}/comments`, {
+            client(`/posts/${babble._id}/comments`, {
                 body: { text: commentText },
             }).then((resp) => {
                 setComments([...comments, resp.data]);
@@ -39,27 +39,27 @@ function TweetDetail({ }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        client(`/posts/${params.tweetId}`)
+        client(`/posts/${params.babbleId}`)
             .then((res) => {
-                setTweet(res.data)
+                setBabble(res.data)
                 setComments(res.data.comments)
             })
             .catch((err) => toast.error(err))
 
-    }, [params.tweetId])
+    }, [params.babbleId])
 
     return (
         <div>
 
             <Header border>
-                <TextTitle xbold>Tweet</TextTitle>
+                <TextTitle xbold>Babble</TextTitle>
             </Header>
-            {tweet ?
+            {babble ?
                 (
                     <>
-                        <Tweet post={tweet} />
+                        <Babble post={babble} />
                         <SearchBox
-                            text='Tweet your reply'
+                            text='Babble your reply'
                             icon={false}
                             onChange={(e) => setCommentText(e.target.value)}
                             value={commentText}
@@ -82,4 +82,4 @@ function TweetDetail({ }) {
     )
 }
 
-export default TweetDetail
+export default BabbleDetail

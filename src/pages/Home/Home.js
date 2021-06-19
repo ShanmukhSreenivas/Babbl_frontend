@@ -3,15 +3,13 @@ import { toast } from 'react-toastify'
 
 import Header from '../../components/Header/Header'
 import Loading from '../../components/loading'
-import * as Icons from '../../components/icons'
-import Tweet from '../../components/Tweet/Tweet'
-import TweetEditor from '../../components/TweetEditor/TweetEditor'
+import Babble from '../../components/Babble/Babble'
+import BabbleEditor from '../../components/BabbleEditor/BabbleEditor'
 
 import { FeedContext } from '../../context/FeedContext'
 import { client } from '../../utils'
 
 import './Home.css'
-import Button from '../../components/Button/Button'
 import TextTitle from '../../components/Text/title'
 
 function Home() {
@@ -24,7 +22,7 @@ function Home() {
         window.scrollTo(0, 0);
 
         setLoading(true);
-        setFeed(null)
+        setFeed(null);
 
         client("/users/feed")
             .then((res) => {
@@ -36,7 +34,7 @@ function Home() {
                 setLoading(false);
             });
 
-    }, [])
+    }, [setFeed])
 
     return (
         <div className="">
@@ -47,10 +45,10 @@ function Home() {
                 </Button>*/}
             </Header>
 
-            <TweetEditor />
+            <BabbleEditor />
 
             {feed?.map((post) => (
-                <Tweet key={post._id} post={post} />
+                <Babble key={post._id} post={post} />
             ))}
 
             {loading && <div className="loading">
@@ -59,7 +57,7 @@ function Home() {
             }
 
 
-            { feed && feed.length == 0 && !loading && (
+            { feed && feed.length === 0 && !loading && (
                 <div className="loading">
                     <TextTitle>Follow Others to See Their Posts..</TextTitle>
                 </div>

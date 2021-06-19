@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import TextareaAutosize from "react-textarea-autosize";
 import { toast } from "react-toastify";
 import { Picker } from 'emoji-mart'
-import ReactDOM from 'react-dom'
 
 import { FeedContext } from "../../context/FeedContext";
 import { uploadImage, client } from '../../utils'
@@ -12,14 +11,14 @@ import Avatar from '../Avatar/Avatar'
 import ThemeButton from '../ThemeButton/ThemeButton'
 import { Media, Gif, Emoji } from '../icons'
 
-import './TweetEditor.css'
+import './BabbleEditor.css'
 
-function TweetEditor() {
+function BabbleEditor() {
     const { feed, setFeed, tags, setTags } = useContext(FeedContext);
 
     const [preview, setPreview] = useState("");
     const [postImage, setPostImage] = useState("");
-    const [textTweet, setTextTweet] = useState("");
+    const [textBabble, setTextBabble] = useState("");
     const [toggleEmoji, setToggleEmoji] = useState(false);
 
     const handleUploadImage = (e) => {
@@ -38,21 +37,21 @@ function TweetEditor() {
     };
 
     const handleSubmitPost = () => {
-        if (!textTweet) {
+        if (!textBabble) {
             return toast.error("Please write something");
         }
 
-        const tag = textTweet
+        const tag = textBabble
             .split(" ")
             .filter((caption) => caption.startsWith("#"))
             .map((val) => val.slice(1, val.length));
 
-        const cleanedCaption = textTweet
+        const cleanedCaption = textBabble
             .split(" ")
             .filter((caption) => !caption.startsWith("#"))
             .join(" ");
 
-        setTextTweet("");
+        setTextBabble("");
 
         const newPost = {
             caption: cleanedCaption,
@@ -76,7 +75,7 @@ function TweetEditor() {
                 }
             });
 
-            toast.success("Tweet posted successfully.");
+            toast.success("Babble posted successfully.");
         });
     };
 
@@ -85,12 +84,12 @@ function TweetEditor() {
         let codesArray = []
         sym.forEach(el => codesArray.push('0x' + el))
         let emoji = String.fromCodePoint(...codesArray)
-        setTextTweet(textTweet + emoji)
+        setTextBabble(textBabble + emoji)
     }
     return (
-        <div className="tweet-editor">
-            <Avatar className="tweet-editor--avatar" size='medium' />
-            <div className="tweet-editor__body">
+        <div className="babble-editor">
+            <Avatar className="babble-editor--avatar" size='medium' />
+            <div className="babble-editor__body">
                 {preview && (
                     <img style={{ width: "100%" }} src={preview} alt="preview" />
                 )}
@@ -98,12 +97,12 @@ function TweetEditor() {
                     rows="59"
                     placeholder="What's happening?"
                     type="text"
-                    onChange={(e) => setTextTweet(e.target.value)}
-                    value={textTweet}
+                    onChange={(e) => setTextBabble(e.target.value)}
+                    value={textBabble}
                 />
-                <div className="tweet-editor__body--secondary">
+                <div className="babble-editor__body--secondary">
 
-                    <div className="tweet-editor__body--icons">
+                    <div className="babble-editor__body--icons">
 
                         <label htmlFor="file-input" style={{ cursor: "pointer" }}>
                             <Button icon style={{ pointerEvents: "none" }} >
@@ -132,4 +131,4 @@ function TweetEditor() {
     )
 }
 
-export default TweetEditor
+export default BabbleEditor

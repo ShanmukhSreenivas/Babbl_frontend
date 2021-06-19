@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 import Button from '../../components/Button/Button'
 import Header from '../../components/Header/Header'
-import { More, Options } from '../../components/icons'
+import { Options } from '../../components/icons'
 import TextTitle from '../../components/Text/title'
 
 import './Notifications.css'

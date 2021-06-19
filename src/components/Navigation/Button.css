@@ -2,7 +2,7 @@
   position: relative;
   padding: 10px;
 }
-.navButton.twitter {
+.navButton.babbl {
   color: var(--c-theme);
 }
 .navButton:global(html:not(.light)) & {

@@ -1,8 +1,5 @@
 import React from 'react'
 
-import Button from '../Button/Button'
-import TextTitle from '../Text/title'
-
 import './Header.css'
 
 function Header({ children, border, className }) {

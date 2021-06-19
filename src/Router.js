@@ -11,7 +11,7 @@ import EditProfile from './pages/Profile/EditProfile';
 import Explore from './pages/Explore/Explore';
 import Notifications from './pages/Notifications/Notifications';
 import Bookmarks from './pages/Bookmarks/Bookmarks';
-import TweetDetail from './pages/TweetDetail/TweetDetail';
+import BabbleDetail from './pages/BabbleDetail/BabbleDetail';
 import Lists from './pages/Lists/Lists';
 import { FeedContext } from './context/FeedContext';
 import { client } from './utils';
@@ -34,7 +34,7 @@ function Router() {
             });
 
 
-    }, [])
+    })
 
     return (
         <BrowserRouter>
@@ -51,8 +51,8 @@ function Router() {
                     <Route exact path={`/:handle`} component={Profile} />
                     <Route
                         exact
-                        path={`/:handle/status/:tweetId`}
-                        component={TweetDetail}
+                        path={`/:handle/status/:babbleId`}
+                        component={BabbleDetail}
                     />
                     <Redirect from="*" to="/" />
                 </Switch>

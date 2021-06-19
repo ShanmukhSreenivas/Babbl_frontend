@@ -15,16 +15,16 @@ function MobileSidebar() {
     return (
         <div className='mobile-sidebar'>
             <Button gray icon href='/'>
-                {router.pathname == '/' ? <HomeFill className='s-selected' /> : <Home />}
+                {router.pathname === '/' ? <HomeFill className='s-selected' /> : <Home />}
             </Button>
             <Button gray icon href='/explore'>
-                {router.pathname == '/explore' ? <Search className='s-selected' /> : <Search />}
+                {router.pathname === '/explore' ? <Search className='s-selected' /> : <Search />}
             </Button>
             <Button gray icon href='/lists'>
-                {router.pathname == '/lists' ? <ListsFill className='s-selected' /> : <Lists />}
+                {router.pathname === '/lists' ? <ListsFill className='s-selected' /> : <Lists />}
             </Button>
             <Button gray icon href={`/${user.username}`}>
-                {router.pathname == `/${user.username}` ? <ProfileFill className='s-selected' /> : <Profile />}
+                {router.pathname === `/${user.username}` ? <ProfileFill className='s-selected' /> : <Profile />}
             </Button>
         </div>
     )

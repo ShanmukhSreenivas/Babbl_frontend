@@ -9,7 +9,6 @@ import './More.css'
 import { ThemeContext } from '../../context/ThemeContext'
 
 import ThemeButton from '../../components/ThemeButton/ThemeButton'
-import Button from '../../components/Button/Button'
 
 const THEME = {
     light: 'Light',

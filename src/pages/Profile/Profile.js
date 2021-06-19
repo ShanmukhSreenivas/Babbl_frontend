@@ -3,12 +3,10 @@ import { useParams } from 'react-router-dom'
 
 import Header from '../../components/Header/Header'
 import Loading from '../../components/loading'
-import * as Icons from '../../components/icons'
-import Tweet from '../../components/Tweet/Tweet'
+import Babble from '../../components/Babble/Babble'
 import TextTitle from '../../components/Text/title'
 import TextBody from '../../components/Text/body'
 import Follow from '../../components/Follow/Follow'
-import Button from '../../components/Button/Button'
 import Avatar from '../../components/Avatar/Avatar'
 import ThemeButton from '../../components/ThemeButton/ThemeButton'
 
@@ -64,8 +62,8 @@ function Profile() {
          <TextTitle xbold>{profile.fullname ?? profile.username}</TextTitle>
             <TextBody gray>
               {profile?.posts?.length
-                ? `${profile.posts.length} Tweets`
-                : "No Tweets"}
+                ? `${profile.posts.length} Babbles`
+                : "No Babbles"}
             </TextBody>
           </div>
         </div>
@@ -108,7 +106,7 @@ function Profile() {
 
 
       {profile?.posts && profile.posts.map((post) => (
-        <Tweet key={post._id} post={post} pusername={profile?.username} />
+        <Babble key={post._id} post={post} pusername={profile?.username} />
       ))}
 
 

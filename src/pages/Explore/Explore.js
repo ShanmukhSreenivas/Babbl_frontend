@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-
-import Button from '../../components/Button/Button'
 import Header from '../../components/Header/Header'
 import News from '../../components/News'
-import Tweet from '../../components/Tweet/Tweet'
-import { More } from '../../components/icons'
+import Babble from '../../components/Babble/Babble'
 import SearchBox from '../../components/SearchBox/SearchBox'
 import { client } from '../../utils'
 
@@ -19,7 +16,7 @@ function Explore({ location }) {
     const { tags } = useContext(FeedContext);
 
     const [searchText, setSearchText] = useState("")
-    const [tagsTweet, setTagsTweet] = useState(null)
+    const [tagsBabble, setTagsBabble] = useState(null)
 
     const tagsFilter = () => {
         return tags.filter((tag => tag.toLowerCase().indexOf(searchText) !== -1))
@@ -32,7 +29,7 @@ function Explore({ location }) {
         if (location.search) {
             client(`/posts${location.search}`)
                 .then((response) => {
-                    setTagsTweet(response.data);
+                    setTagsBabble(response.data);
                 });
         }
 
@@ -48,8 +45,8 @@ function Explore({ location }) {
                 {/*<Button icon><More /></Button>*/}
             </Header>
 
-            {location.search && tagsTweet?.map(post => (
-                <Tweet key={post._id} post={post} />
+            {location.search && tagsBabble?.map(post => (
+                <Babble key={post._id} post={post} />
             ))}
 
             {!location.search && tagsFilter()?.map(tag => (
@@ -57,9 +54,9 @@ function Explore({ location }) {
             ))}
 
             <div className='loading'>
-                {!tagsTweet && location.search && <Loading />}
+                {!tagsBabble && location.search && <Loading />}
                 {!tags && !location.search && <Loading />}
-                {location.search && tagsTweet && tagsTweet?.length === 0 && 'Tweet yok :/ .'}
+                {location.search && tagsBabble && tagsBabble?.length === 0 && 'No Babble.'}
             </div>
         </>
     )

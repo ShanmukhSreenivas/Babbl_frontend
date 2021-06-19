@@ -1,6 +1,7 @@
 {
   "name": "babbl-frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Frontend for Babbl using React.js, StorybookJS",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -14,6 +15,11 @@
     "react-textarea-autosize": "^8.2.0",
     "react-toastify": "^6.0.8"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShanmukhSreenivas/babbl-frontend.git"
+  },
+  "license": "BSL-1.0",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

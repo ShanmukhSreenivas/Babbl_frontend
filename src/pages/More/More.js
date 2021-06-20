@@ -38,7 +38,7 @@ function More() {
             <div className="more-page">
 
                 <div>
-                    {['light', 'dim', 'dark'].map((th) => (
+                    {['light', 'dim'].map((th) => (
 
                         <ThemeButton
                             key={th}
